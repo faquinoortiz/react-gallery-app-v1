@@ -1,26 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import PropTypes from 'prop-types';
 
-function Search ({ on Search }){
-    const [query, setQuery] = useState ('');
+function Search({ onSearch }) {
+  const [query, setQuery] = useState('');
 
-    const handleSearch = () => {
+  const handleSearch = () => {
+    onSearch(query);
+  };
 
-        onSearch(query);
-    
-    };
-
-    return (
+  return (
     <div className="search">
-     <input
+      <input
         type="text"
         placeholder="Search for the photos..."
-        value= {query}
-        onChange={(e)} => setQuery(e.target.value)}
-    />
-    <button onClick={handleSearch}>Search</button>
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
     </div>
-
-    );
+  );
 }
+
+Search.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
 
 export default Search;
