@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Search from "./Search";
 import Nav from "./Nav";
 import PhotoList from "./PhotoList";
+import apiKey from "src./config";
 
 function App() {
   const [photos, setPhotos] = useState([]);
   const [pageTitle, setPageTitle] = useState("Home"); 
-  const apiKey=
+
 
   useEffect(() => {
     // Fetch photos from the Flickr API

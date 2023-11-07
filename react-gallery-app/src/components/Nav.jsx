@@ -7,7 +7,7 @@ function Nav(){
         <NavLink to="/">Home</NavLink>
         <NavLink to = "/cats">Cats</NavLink>
         <NavLink to = "/dogs">Dogs</NavLink>
-
+        <NavLink to = "/dogs">Dogs</NavLink>
      </nav>
 
     );
