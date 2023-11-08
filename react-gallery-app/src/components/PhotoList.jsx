@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
+import Photo from './Photo';
 
-function Search({ onSearch }) {
-  const [query, setQuery] = useState('');
-
-  const handleSearch = () => {
-    onSearch(query);
-  };
-
+function PhotoList({ photos, pageTitle }) {
   return (
-    <div className="search">
-      <input
-        type="text"
-        placeholder="Search for the photos..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+    <div className="photo-list">
+      <h2>{pageTitle}</h2>
+      <ul className="photos">
+        {photos.map((photo) => (
+          <Photo key={photo.id} url={photo.url} alt={photo.title} />
+        ))}
+      </ul>
     </div>
   );
 }
 
-Search.propTypes = {
-  onSearch: PropTypes.func.isRequired,
+PhotoList.propTypes = {
+  photos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  pageTitle: PropTypes.string.isRequired,
 };
 
-export default Search;
+export default PhotoList;

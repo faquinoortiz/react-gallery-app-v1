@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Search from "./Search";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Search from "./SearchForm";
 import Nav from "./Nav";
 import PhotoList from "./PhotoList";
 import apiKey from "src./config";
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     // Fetch photos from the Flickr API
     fetch(
-      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&per_page=24&tags=sunsets&format=json&nojsoncallback=1`
+      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&per_page=24&tags=cats&format=json&nojsoncallback=1`
     )
       .then((response) => response.json())
       .then((data) => {
