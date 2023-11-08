@@ -1,9 +1,10 @@
+//all imports
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Search from "./SearchForm";
-import Nav from "./Nav";
-import PhotoList from "./PhotoList";
-import apiKey from "src./config";
+import { BrowserRouter,Routes, Route, Navigate } from "react-router-dom";
+import Search from "./components/SearchForm";
+import Nav from "./components/Nav";
+import PhotoList from "./components/PhotoList";
+import apiKey from "./config";
 
 function App() {
   const [photos, setPhotos] = useState([]);
@@ -11,7 +12,7 @@ function App() {
 
 
   useEffect(() => {
-    // Fetch photos from the Flickr API
+// Fetch photos from the Flickr API
     fetch(
       `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&per_page=24&tags=cats&format=json&nojsoncallback=1`
     )
@@ -23,7 +24,7 @@ function App() {
         console.error("API request error:", error);
       });
   }, []);
-
+//Handles the search query
   const handleSearch = (query) => {
     
     fetch(
@@ -39,6 +40,7 @@ function App() {
       });
   };
 
+  
   return (
     <BrowserRouter>
       
