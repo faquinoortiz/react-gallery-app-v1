@@ -3,7 +3,7 @@ import Photo from './Photo';
 
 function PhotoList({ photos, pageTitle }) {
   return (
-    <div className="photo-list">
+    <div className="photo-container">
       <h2>{pageTitle}</h2>
       <ul className="photos">
         {photos.map((photo) => (
