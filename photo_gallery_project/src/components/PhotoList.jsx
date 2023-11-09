@@ -9,7 +9,7 @@ function PhotoList({ photos, pageTitle }) {
         {photos.map((photo) => (
           <Photo
             key={photo.id}
-            url={`https://live.staticflickr.com/${photo.server}/{photo.id}_${photo.secret}.jpg`}
+            url={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
             alt={photo.title}
           />
         ))}
