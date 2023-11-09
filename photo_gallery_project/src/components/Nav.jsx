@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom'
 
 function Nav(){
@@ -7,7 +6,7 @@ function Nav(){
         <NavLink to="/">Home</NavLink>
         <NavLink to = "/cats">Cats</NavLink>
         <NavLink to = "/dogs">Dogs</NavLink>
-        <NavLink to = "/dogs">Dogs</NavLink>
+        <NavLink to = "/dogs">Computers</NavLink>
      </nav>
 
     );

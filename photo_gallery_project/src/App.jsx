@@ -1,6 +1,8 @@
-//all imports
-import React, { useState, useEffect } from "react";
+
+import { useState, useEffect } from "react";
 import { BrowserRouter,Routes, Route, Navigate } from "react-router-dom";
+
+//App components
 import Search from "./components/SearchForm";
 import Nav from "./components/Nav";
 import PhotoList from "./components/PhotoList";
@@ -45,7 +47,7 @@ function App() {
     <BrowserRouter>
       
       <Routes>
-        <Route path="/"element={<Navigate to="/cats" />}/>
+        <Route path="/"element={<Navigate to="" />}/>
         <Route path="/cats" element={<PhotoList photos={photos} pageTitle="Cats" />} />
         <Route path="/dogs" element={<PhotoList photos={photos} pageTitle="Dogs" />} />
         <Route path="/computers"element={<PhotoList photos={photos} pageTitle="Computers" />}
