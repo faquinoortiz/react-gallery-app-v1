@@ -1,12 +1,16 @@
-import { useState } from "react";
+
+import  { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 function Search({ onSearch }) {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     onSearch(query);
+    navigate(`/search/${query}`);
   };
 
   return (
