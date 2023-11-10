@@ -46,7 +46,7 @@ function App() {
       <Search onSearch={handleChangeQuery} />
       <Nav onNavClick={handleChangeQuery} />
       <Routes>
-      <Route path="/" element={<Navigate to="cats" />} />
+        <Route path="/" element={<Navigate to="cats" />} />
         <Route path="/cats" element={<PhotoList photos={photos} pageTitle="Cats" />} />
         <Route path="/dogs" element={<PhotoList photos={photos} pageTitle="Dogs" />} />
         <Route path="/computers" element={<PhotoList photos={photos} pageTitle="Computers" />} />
