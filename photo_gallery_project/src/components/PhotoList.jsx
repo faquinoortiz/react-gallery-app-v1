@@ -1,7 +1,19 @@
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Photo from './Photo';
+import { useParams } from 'react-router-dom';
 
-function PhotoList({ photos, pageTitle }) {
+function PhotoList({ photos, pageTitle, onChangeQuery }) {
+  const { query } = useParams();
+
+  useEffect(() => {
+    if (query) {
+      onChangeQuery(query);
+    } else {
+      onChangeQuery(pageTitle.toLowerCase());
+    }
+  }, [query, pageTitle, onChangeQuery]);
+
   return (
     <div className="photo-container">
       <h2>{pageTitle}</h2>
@@ -28,6 +40,7 @@ PhotoList.propTypes = {
     })
   ).isRequired,
   pageTitle: PropTypes.string.isRequired,
+  onChangeQuery: PropTypes.func.isRequired,
 };
 
 export default PhotoList;
